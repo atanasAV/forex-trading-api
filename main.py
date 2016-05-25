@@ -31,7 +31,7 @@ while 1:
   print("How would you like to continue ?")
   print("(monitor | trade | automation | abort)")
   choice = input("$> ")
-  if choice is "abort":
+  if choice == "abort":
     print("\nRight choice for now !")
     break
   else:
