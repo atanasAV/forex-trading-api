@@ -21,7 +21,7 @@ def testConnection(token):
 print("\n Hello welcome to my trading platform !")
 print("\nEnter your personal key to continue : ")
 token = input("$> ")
-
+print(sys.path)
 with warnings.catch_warnings():
   warnings.simplefilter("ignore")
   accountID = testConnection(token)
