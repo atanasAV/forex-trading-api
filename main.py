@@ -45,7 +45,8 @@ while 1:
   			currencies.append(nextOne)
 
   	json = mon.getBuyPrice(currencies)
-  	print(json)
+  	print(json["bids"])
+  	print(json["asks"])
   else:
     print("\nInvalid choice!")
 

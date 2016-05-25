@@ -16,4 +16,4 @@ class Monitor:
 		params = {"instruments":currencies}
 		response = requests.get(self.pricingApi, headers=headers, params=params)
 		if response.status_code == 200:
-			return response.json()
+			return response.json()["prices"][0]
