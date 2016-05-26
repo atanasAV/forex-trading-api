@@ -20,7 +20,7 @@ def testConnection(token):
 
 print("\n Hello welcome to my trading platform !")
 print("\nEnter your personal key to continue : ")
-token = "14abcc6bd0f251c3aad54377e6c8093f-f4c49e0bfc8b6255398547b6cec21529"#input("$> ")
+token = input("$> ")
 with warnings.catch_warnings():
   warnings.simplefilter("ignore")
   accountID = testConnection(token)
