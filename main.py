@@ -20,7 +20,7 @@ def testConnection(token):
 
 print("\n Hello welcome to my trading platform !")
 print("\nEnter your personal key to continue : ")
-token = input("$> ")
+token = "8253d1750c15aa2af6924e7647ff2e50-42548a059d89304e4a526ad677c9ff75"#input("$> ")
 with warnings.catch_warnings():
   warnings.simplefilter("ignore")
   accountID = testConnection(token)
@@ -35,18 +35,22 @@ while 1:
     break
   elif choice == "monitor":
   	mon = monitor.Monitor(accountID, token)
-  	currencies = list()
-  	print("What currencies would you like to check?")
   	while 1:
-  		nextOne = input("$> ")
-  		if nextOne == "end":
-  			break
-  		else:
-  			currencies.append(nextOne)
+  		print("What currency would you like to check?")
+	  	nextOne = input("$> ")
+	  	if nextOne == "end":
+	  		break
+	  	currencies = list()
+	  	currencies.append(nextOne)
+	  	json = mon.getBidsAndAsks(currencies)
 
-  	json = mon.getBuyPrice(currencies)
-  	print(json["bids"])
-  	print(json["asks"])
+	  	if json == -1:
+	  		break
+
+	  	print("---------------------------")
+	  	print("Open postition for selling : " + json["bids"][0]["price"])
+	  	print("Someone wants to sell at : " + json["asks"][0]["price"])
+	  	print("---------------------------")
   else:
     print("\nInvalid choice!")
 

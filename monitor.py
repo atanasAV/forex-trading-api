@@ -11,7 +11,7 @@ class Monitor:
 		self.pricingApi += "/pricing"
 
 	#currencies is a list of strings
-	def getBuyPrice(self, currencies):
+	def getBidsAndAsks(self, currencies):
 		headers = {"Authorization":"Bearer " + self.token}
 		params = {"instruments":currencies}
 		response = requests.get(self.pricingApi, headers=headers, params=params)
