@@ -1,7 +1,7 @@
 import requests
 import warnings
 import sys
-import monitor
+from tradingModule import monitor
 
 def testConnection(token):
   print("\n Connecting to REST API...")
