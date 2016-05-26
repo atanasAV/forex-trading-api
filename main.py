@@ -36,7 +36,8 @@ while 1:
   elif choice == "monitor":
   	mon = monitor.Monitor(accountID, token)
   	while 1:
-  		print("What currency would you like to check?")
+  		print("What currency would you like to check? (type end to stop)")
+  		print("Example : EUR_USD")
 	  	nextOne = input("$> ")
 	  	if nextOne == "end":
 	  		break
@@ -48,7 +49,7 @@ while 1:
 	  		break
 
 	  	print("---------------------------")
-	  	print("Open postition for selling : " + json["bids"][0]["price"])
+	  	print("Someone wants to buy at : " + json["bids"][0]["price"])
 	  	print("Someone wants to sell at : " + json["asks"][0]["price"])
 	  	print("---------------------------")
   else:
